@@ -1,0 +1,17 @@
+.bonus {
+  &:hover .bonus_fa .bonus_circle{
+    background: $main_color;
+    @include transition(background, 0.5s, ease-out);
+  }
+  &:hover .bonus_fa .bonus_circle .fa__bonus_circle{
+    color: #e2e2e2;
+    @include transition(color, 0.5s, ease-out);
+  }
+  &:hover .bonus_line {
+    width: 80%;
+    height:2px;
+    color: $main_color;
+    background-color: $main_color;
+    @include transition(all, 0.3s, ease-out);
+  }
+}

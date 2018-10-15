@@ -1,0 +1,15 @@
+.link {
+  text-decoration: none;
+  font-family: $regular;
+  color: #fff;
+
+  &:hover {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  &__logo {
+    font-size: 1.6rem;
+  }
+  
+}

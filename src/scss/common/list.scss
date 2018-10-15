@@ -1,0 +1,19 @@
+.list {
+  list-style: none;
+  text-align: left;
+
+  &_elem {
+    cursor: pointer;
+  }
+
+  &_elem__footer {
+    font-size: $paragraph_size;
+
+    &:hover,
+    &:hover .link {
+      color: $font_hover_color;
+      @include transition(color, 0.7s, ease-out);
+    }
+  }
+
+}

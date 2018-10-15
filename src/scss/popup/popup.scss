@@ -1,0 +1,40 @@
+@import './popup_block';
+@import './popup_photo';
+@import './popup_price';
+@import './popup_text';
+@import './popup_slider';
+@import './popup_vendor_price';
+@import './popup_description';
+
+.popup_wrap {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.popup {
+  background: #f1f1f1;
+  width: 80%;
+  border-radius: 10px;
+  position: relative;
+  margin: 0 auto;
+  padding: 50px;
+  display: flex;
+  justify-content: space-around;
+
+  &_close__theme {
+    color: $main_color!important;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+  }
+
+}
+

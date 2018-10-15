@@ -1,0 +1,8 @@
+.bonus_line {
+  height: 2px;
+  color: #cacaca;
+  background-color: #cacaca;
+  border: none;
+  width:40%;
+  @include transition(all, 0.3s, ease-out);
+}

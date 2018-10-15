@@ -1,0 +1,29 @@
+.popup_photo {
+  width: 20rem;
+  height: 30rem;
+  margin: 1rem;
+  overflow: hidden;
+}
+
+.small_photo {
+  margin: 1rem 0;
+}
+
+.small_photo img {
+  width: 117.5px;
+  height: 117.5px;
+  display: flex;
+  flex-direction: column;
+  border: 5px solid rgb(47, 104, 47);
+  border-radius: 5px;
+  margin: .2rem 0;
+  cursor: pointer;
+}
+
+.small_photo img:first-child {
+  margin-top: 0;
+}
+
+.small_photo img:last-child {
+  margin-bottom: 0;
+}

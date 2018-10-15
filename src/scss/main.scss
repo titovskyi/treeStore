@@ -4,6 +4,12 @@
 @import './variables';
 @import './mixins';
 
+@import './common/common';
+@import './bonuses/bonuses';
+@import './popup/popup';
+@import './footer/footer';
+
+
 header {
   background: $main_color;
   font-family: $bold;
@@ -12,11 +18,6 @@ header {
       @include flex-position (space-between, stretch, wrap);
       .logo {
 				margin: 1rem 0;
-				a {
-					text-decoration: none;
-					color: white;
-					font-size: 1.6rem;
-				}
       }
       .header_contacts {
         @include flex-position(flex-end, center);
@@ -131,10 +132,7 @@ header {
   }
 }
 
-
-
-// DASHBOARD
-.tile{
+.tile_block{
   margin-top:3rem;
   font-family:$regular;
   .tile_img{
@@ -190,205 +188,31 @@ header {
   }
   .tile_price{
     color: $price_color;
-    font-family:$bold;
+    font-family: $bold;
+    margin-top: 1rem;
   }
 }
 
-
-
-
-// .dashboard {
-//   .all_products {
-//     padding:3rem 0 1.5rem 0;
-//     .tile{
-//       margin-top:3rem;
-//       font-family:$regular;
-//       .tile_img{
-//         position: relative;
-//         overflow: hidden;
-//         .hover_img{
-//           position: absolute;
-//           top: 0;
-//           left: 0;
-//           opacity:0;
-//           @include transition(opacity, 0.5s, ease-out);
-//         }
-//         img{
-//           height: 30rem;
-//           width: 100%;
-//         }
-//         .tile_details{
-//           position: absolute;
-//           bottom: -7rem;
-//           left:50%;
-//           transform: translate(-50%,-50%);
-//           padding:1rem 5rem;
-//           text-transform: uppercase;
-//           color: #ffffff;
-//           background-color: rgba(0,0,0,0.8);
-//           border:0;
-//           font-family: $bold;
-//           border-radius: 10px;
-//           font-size:$paragraph_size;
-//           cursor: pointer;
-//           @include transition(bottom, 0.5s, ease-out);
-//           &:hover{
-//             background: $main_color;
-//             opacity:0.8;
-//             color: $font_hover_color;
-//           }
-//         }
-//         &:hover .hover_img{
-//           opacity: 1;
-//           @include transition(opacity, 0.7s, ease-out);
-//         }
-//         &:hover .tile_details{
-//           bottom: -0.5rem;
-//           @include transition(bottom, 0.5s, ease-out);
-//         }
-//       }
-//       .tile_text{
-//         font-size:2.5rem;
-//         margin-top:1rem;
-//         margin-bottom:0.5rem;
-//         cursor: pointer;
-//       }
-//       .tile_price{
-//         color: $price_color;
-//         font-family:$bold;
-//       }
-//     }
-//   }
-//   .new_wrap {
-//     // @include background('../../assets/bg_new_products.jpg', cover, no-repeat);
-//     padding: 1.5rem 0;
-//     .tile{
-//       margin-top:3rem;
-//       font-family:$regular;
-//       .tile_img{
-//         position: relative;
-//         overflow: hidden;
-//         .hover_img{
-//           position: absolute;
-//           top: 0;
-//           left: 0;
-//           opacity:0;
-//           @include transition(opacity, 0.5s, ease-out);
-//         }
-//         img{
-//           height: 30rem;
-//           width: 100%;
-//         }
-//         .tile_details{
-//           position: absolute;
-//           bottom: -7rem;
-//           left:50%;
-//           transform: translate(-50%,-50%);
-//           padding:1rem 5rem;
-//           text-transform: uppercase;
-//           color: #ffffff;
-//           background-color: rgba(0,0,0,0.8);
-//           border:0;
-//           font-family: $bold;
-//           border-radius: 10px;
-//           font-size:$paragraph_size;
-//           cursor: pointer;
-//           @include transition(bottom, 0.5s, ease-out);
-//           &:hover{
-//             background: $main_color;
-//             opacity:0.8;
-//             color: $font_hover_color;
-//           }
-//         }
-//         &:hover .hover_img{
-//           opacity: 1;
-//           @include transition(opacity, 0.7s, ease-out);
-//         }
-//         &:hover .tile_details{
-//           bottom: -0.5rem;
-//           @include transition(bottom, 0.5s, ease-out);
-//         }
-//       }
-//       .tile_text{
-//         font-size:2.5rem;
-//         margin-top:1rem;
-//         margin-bottom:0.5rem;
-//         cursor: pointer;
-//       }
-//       .tile_price{
-//         color: $price_color;
-//         font-family:$bold;
-//       }
-//     }
-//   }
-// }
-/*DASHBOARD_END*/
-/*BENUSES_BEGIN*/
-.bonuses {
-  .row {
-    margin:3rem 0;
-    text-align: center;
-    div {
-      &:hover .bonus_fa .circle{
-        background: $main_color;
-        @include transition(background, 0.5s, ease-out);
-      }
-      &:hover .bonus_fa .circle .fa{
-        color: #e2e2e2;
-        @include transition(color, 0.5s, ease-out);
-      }
-      &:hover .hr_bonus {
-        width: 80%;
-        height:2px;
-        color: $main_color;
-        background-color: $main_color;
-        @include transition(all, 0.3s, ease-out);
-      }
-      .bonus_fa {
-        .circle {
-          width:10rem;
-          height:10rem;
-          -webkit-border-radius: 50%;
-          -moz-border-radius: 50%;
-          border-radius: 50%;
-          border: 2px solid $main_color;
-          margin:0 auto;
-          position: relative;
-          background: #e2e2e2;
-          @include transition(background, 0.5s, ease-out);
-          .fa {
-            font-size:3rem;
-            color: $main_color;
-            position: absolute;
-            top:50%;
-            left:50%;
-            -webkit-transform: translate(-50%,-50%);
-            -moz-transform: translate(-50%,-50%);
-            -ms-transform: translate(-50%,-50%);
-            -o-transform: translate(-50%,-50%);
-            transform: translate(-50%,-50%);
-            @include transition(color, 0.5s, ease-out);
-          }
-        }
-        p {
-          font-size:2rem;
-          font-family:$bold;
-          margin-top:2rem;
-          height: 6rem;
-        }
-      }
-      .hr_bonus {
-        height: 2px;
-        color: #cacaca;
-        background-color: #cacaca;
-        border: none;
-        width:40%;
-        @include transition(all, 0.3s, ease-out);
-      }
-    }
-  }
+.fa-times {
+  font-size: 30px;
+  color: white; 
 }
-/*BENUSES_END*/
+
+.spice {
+  display: none;
+}
+  
+.nav_buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav_trees, .nav_spices {
+  cursor: pointer;
+}
+  
+
 
 
 footer{
@@ -399,41 +223,10 @@ footer{
   .footer_inner{
     text-align: center;
     padding:5rem 0;
-    .logo{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      a {
-        text-decoration: none;
-        color: white;
-        font-size: 1.6rem;
-      }
-    }
-    .list_col {
-      border-right: #ffffff 1px solid;
-      border-left:#ffffff 1px solid;
-      margin-right:-1px;
-      height: 10rem;
-      ul{
-        list-style: none;
-        text-align: left;
-        li{
-          font-size: $paragraph_size;
-          cursor: pointer;
-          .fa {
-            width: 2rem;
-          }
-          a{
-            color: #fff;
-						text-decoration: none;
-						font-family: $regular;
-          }
-          &:hover, &:hover a{
-            color: $font_hover_color;
-            @include transition(color, 0.7s, ease-out);
-          }
-        }
-      }
-    }
+  }
+  .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
